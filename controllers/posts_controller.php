@@ -28,22 +28,20 @@ class PostsController {
 	public function insertar(){
 		
         Post::insertarBD();
-
+        
 
 
 	}
-/*
-	public function mostrarInsertar{
-		no modelo
-		vista 
-		require_once("views/posts/mostrarInsertar.php")
-	}
-	public function insertar{
-		id=$_POST['id'];
-		...
-		Post::insert();
 
-		header(Location:'?contron=post&action=index')
-	}*/
+	public function modificar(){
+		$post = Post::find($_GET['id']);
+		require_once('views/posts/update_post.php');
+
+
+	}
+	public function update(){
+			Post::updateBD();
+	}	
+
 }
 ?>
