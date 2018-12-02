@@ -1,4 +1,4 @@
-<form action="?controller=posts&action=insertar" method="post" enctype="multipart/form-data"> 
+<form action="<?php echo constant('URL'); ?>posts/insertar" method="post" enctype="multipart/form-data"> 
     <table class='table table-hover table-responsive table-bordered'>
 
 

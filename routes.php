@@ -1,5 +1,5 @@
 <?php
-function call($controller, $action) {
+function call($controller, $action, $dato) {
 	require_once('controllers/' . $controller . '_controller.php');
 
 	switch($controller) {
@@ -13,21 +13,22 @@ function call($controller, $action) {
 		break;
 	}
 	//$controller ahora es un objeto
-	$controller->{ $action }();
+	$controller->{ $action }($dato);
 }
 // agregando una entrada para el nuevo controlador y sus acciones.
 $controllers = array( 	'pages' => ['home', 'error'],
-						'posts' => ['index', 'show','create','insertar','modificar','update']
+						'posts' => ['index', 'show','create','insertar','modificar','update','delete']
+
 );
 
 if (array_key_exists($controller, $controllers)) {
 	if (in_array($action, $controllers[$controller])) {
-		call($controller, $action);
+		call($controller, $action,$dato);
 	} else {
-		call('pages', 'error');
+		call('pages', 'error',null);
 	}
 } else {
-	call('pages', 'error');
+	call('pages', 'error',null);
 }
 ?>
 

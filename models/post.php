@@ -26,6 +26,7 @@ class Post {
 		return $list;
 	}
 	public static function find($id) {
+		
 		$db = Db::getInstance();
  // nos aseguramos que $id es un entero
 		$id = intval($id);
@@ -51,14 +52,14 @@ class Post {
         // error message is empty
 			$file_upload_error_messages="";
         // make sure that file is a real image
-			
+			/*
 			$check = getimagesize($_FILES["image"]["tmp_name"]);
 			if($check!==false){
     // submitted file is an image
 			}else{
 				$file_upload_error_messages.="<div>Submitted file is not an image.</div>";
 			}
-
+*/
 // make sure certain file types are allowed
 			$allowed_file_types=array("jpg", "jpeg", "png", "gif");
 			if(!in_array($file_type, $allowed_file_types)){
@@ -66,9 +67,9 @@ class Post {
 			}
 
 // make sure file does not exist
-if(file_exists($target_file)){
-    $file_upload_error_messages.="<div>Image already exists. Try to change file name.</div>";
-}
+			if(file_exists($target_file)){
+				$file_upload_error_messages.="<div>Image already exists. Try to change file name.</div>";
+			}
 
 // make sure submitted file is not too large, can't be larger than 1 MB
 			if($_FILES['image']['size'] > (1024000)){
@@ -142,14 +143,15 @@ if(file_exists($target_file)){
 
 
 
-		$id=$_GET['id'];
+		
 		$req = $db->prepare('UPDATE posts set titulo=:titulo,author=:author, content=:content, image=:image WHERE id=:id');
 
+		$id=htmlspecialchars(strip_tags($_POST['id']));
 		$titulo=htmlspecialchars(strip_tags($_POST['titulo']));
 		$author=htmlspecialchars(strip_tags($_POST['author']));
 		$content=htmlspecialchars(strip_tags($_POST['content']));
 		$image=htmlspecialchars(strip_tags($_FILES['image']["name"]));
-				if ($_FILES["image"]["name"]=="") {
+		if ($_FILES["image"]["name"]=="") {
 			$image=$_POST['imageHiden'];
 		}else{
 			$image=!empty($_FILES["image"]["name"])
@@ -176,6 +178,20 @@ if(file_exists($target_file)){
 
 
 
+	}
+
+	public static function eliminarBD($id){
+		$db = Db::getInstance();
+		//$id=$_GET['id'];
+		$req = $db->prepare('DELETE FROM posts WHERE id=:id');
+		$req->bindParam(":id", $id);
+		if($req->execute()){
+			return true;
+
+
+		}else{
+			return false;
+		}
 	}
 }
 ?>
