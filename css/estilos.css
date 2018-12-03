@@ -1,0 +1,21 @@
+th {
+    text-align: center;
+}
+#taula {
+    text-align: center;
+}
+.inici {
+
+	width: 100%;
+	height: 100%;
+     background-color: #fff;
+     -webkit-animation: random 20s infinite;
+     animation: random 20s infinite;
+}
+@keyframes  random {
+    15% { background-color: red; } 
+    30% { background-color: yellow; } 
+    45% { background-color: green; } 
+    60% { background-color: blue; }
+    75% { background-color: white; }  
+}

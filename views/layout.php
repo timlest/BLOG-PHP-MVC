@@ -9,18 +9,50 @@
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- our custom CSS -->
-    <link rel="stylesheet" href="libs/css/custom.css" />
+      <link rel="stylesheet" href="../css/estilos.css">
 	</head>
 	<body>
 		<header>
 			
-			<a href='<?php echo constant('URL');?>'>Home</a>
-			<a href='<?php echo constant('URL');?>posts/index'>Posts</a>
-			<a href='<?php echo constant('URL');?>posts/create'>crear Post</a>
+	
 			
 		</header>
+		<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="<?php echo constant('URL');?>">INICIO</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">POSTS<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo constant('URL');?>posts/index">LISTADO DE POSTS</a></li>
+            <li><a href="<?php echo constant('URL');?>posts/create">CREAR POSTS</a></li>
+          
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">ARTICULOS<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo constant('URL');?>articulo/index">Lista de creadores</a></li>
+            <li><a href="<?php echo constant('URL');?>articulo/create">Nuevo Redactor </a></li>
+          
+          </ul>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</nav>
 
 		<?php require_once('routes.php'); ?>
 

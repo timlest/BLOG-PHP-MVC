@@ -4,12 +4,18 @@ function call($controller, $action, $dato) {
 
 	switch($controller) {
 		case 'pages':
-			$controller = new PagesController();
-			break;
+		$controller = new PagesController();
+		break;
 		case 'posts':
  			// necesitamos el modelo para después consultar a la BBDD desde el controlador
-			require_once('models/post.php');
-			$controller = new PostsController();
+		require_once('models/post.php');
+		$controller = new PostsController();
+		break;
+
+		case 'articulo':
+ 			// necesitamos el modelo para después consultar a la BBDD desde el controlador
+		require_once('models/articulo.php');
+		$controller = new ArticuloController();
 		break;
 	}
 	//$controller ahora es un objeto
@@ -17,7 +23,9 @@ function call($controller, $action, $dato) {
 }
 // agregando una entrada para el nuevo controlador y sus acciones.
 $controllers = array( 	'pages' => ['home', 'error'],
-						'posts' => ['index', 'show','create','insertar','modificar','update','delete']
+						'posts' => ['index', 'show','create','insertar','modificar','update','delete'],
+						'articulo' => ['index', 'show','create','insertar','modificar','update','delete']
+
 
 );
 

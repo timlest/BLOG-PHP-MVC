@@ -110,7 +110,7 @@ $(document).on('click', '.delete-object', function(){
 });
 function sortTable(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-  table = document.getElementById("myTable");
+  table = document.getElementById("taula");
   switching = true;
   //Set the sorting direction to ascending:
   dir = "asc"; 

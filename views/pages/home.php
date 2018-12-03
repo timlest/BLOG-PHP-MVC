@@ -1,3 +1,9 @@
-<p>Bienvenido <?php echo $first_name . ' ' . $last_name; ?>!<p>
+<div class="inici">
+
+	<p>Bienvenido <?php echo $first_name . ' ' . $last_name; ?>!</p>
 <p>Has montado correctamente la primera parte del proyecto.</p>
 <h1>DANI CABRON</h1>
+
+
+
+</div>

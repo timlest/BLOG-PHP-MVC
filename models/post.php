@@ -37,6 +37,18 @@ class Post {
 		return new Post($post['id'],$post['titulo'], $post['author'], $post['content'],$post['image']);
 	}
 
+public function countAll(){
+ 
+    $query = "SELECT id FROM posts";
+ 
+    $stmt = $this->conn->prepare( $query );
+    $stmt->execute();
+ 
+    $num = $stmt->rowCount();
+ 
+    return $num;
+}
+
 	public static function uploadPhoto($image){
 
 		$result_message="";
@@ -186,10 +198,19 @@ class Post {
 		$req = $db->prepare('DELETE FROM posts WHERE id=:id');
 		$req->bindParam(":id", $id);
 		if($req->execute()){
+						?><script>
+			alert("Post Eliminado");
+			</script>
+			<?php
 			return true;
 
 
 		}else{
+
+						?><script>
+			alert("Post no eliminado. Algo pasa");
+			</script>
+			<?php
 			return false;
 		}
 	}
