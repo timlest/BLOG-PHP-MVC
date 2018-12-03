@@ -1,3 +1,5 @@
+<!--Mostramos el POST seleccionado -->
+
 <p><strong>Post #<?php echo $posts->id; ?></strong></p>
 <p><strong>TITULO: </strong><?php echo $posts->titulo; ?></p>
 <p><strong>Autor: </strong><?php echo $posts->author; ?></p>

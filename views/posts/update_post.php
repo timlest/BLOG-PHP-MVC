@@ -1,4 +1,4 @@
-
+<!---form para hacer el update, este form pone en el value ya predefinido el valor que hay en la BBDD-->
 
 
 <form action="<?php echo constant('URL'); ?>posts/update" method="post" enctype="multipart/form-data"> 
@@ -32,7 +32,7 @@
         ?>
 
         
-        <!----/*aver aqui */-->
+        <!----Para que te recoja la foto antigua i la nueva i si no se pone nueva te coga la antigua como valor-->
         <tr>
             <td>Nueva Photo</td>
             <td><input type="file" name="image" value="<?php echo $posts->image;?>" /></td>

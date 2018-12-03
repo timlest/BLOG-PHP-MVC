@@ -40,6 +40,7 @@ class Articulo {
 		return new Articulo($articulo['id'],$articulo['nombre'], $articulo['apellido'], $articulo['revista'], $articulo['numero']);
 	}
 
+ // Insertamos en la BBDD un nuevi articulo
 
 	public static function insertarBD(){
 		$db = Db::getInstance();
@@ -67,7 +68,7 @@ class Articulo {
 
 
 	}
-
+// Actualizamos en la BBDD un articulo con los valores cambiados
 	public static function updateBD(){
 		$db = Db::getInstance();
 
@@ -101,7 +102,7 @@ class Articulo {
 
 
 	}
-
+// Eliminamos un Articulo de la BBDD gracias a que tenemos su id
 	public static function eliminarBD($id){
 		$db = Db::getInstance();
 		//$id=$_GET['id'];

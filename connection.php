@@ -1,5 +1,7 @@
 <?php
 class Db {
+
+	//conexion con la bbdd
 	private static $instance = NULL;
 	private function __construct() {}
 	private function __clone() {}

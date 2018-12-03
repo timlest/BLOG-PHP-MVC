@@ -1,10 +1,10 @@
-
+<!---Form para agregar un nuevo articulo-->
 
 
 <p><strong>Listado de los Articulos:</strong></p>
 <?php
 
-
+//buscar articles
 
 echo "<form role='search' action='search.php'>";
 echo "<div class='input-group col-md-3 pull-left margin-right-1em'>";

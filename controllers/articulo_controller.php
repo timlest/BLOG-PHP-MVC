@@ -24,7 +24,7 @@ class ArticuloController {
 		require_once('views/articulo/create_articulo.php');
 
 	}
-
+//funcion para insertar un articulo
 	public function insertar(){
 		
         Articulo::insertarBD();
@@ -32,14 +32,14 @@ class ArticuloController {
 
 
 	}
-
+//funcion para ir a la vista de modificar un articulo
 	public function modificar($id){
 		$articulo = Articulo::find($id);
 		require_once('views/articulo/update_articulo.php');
 
 
 	}
-
+//funcion para modificar un articulo
 	public function update(){
 			Articulo::updateBD();
 			echo("<h1> S'ha actualitzat</h1>");
@@ -47,7 +47,7 @@ class ArticuloController {
 
 	}	
 
-
+//funcion para eliminar un articulo
 	public function delete($id){
 		if(Articulo::eliminarBD($id)==true){
 

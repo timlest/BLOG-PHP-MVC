@@ -1,8 +1,10 @@
 <div class="inici">
-
+<br>
 	<p>Bienvenido <?php echo $first_name . ' ' . $last_name; ?>!</p>
-<p>Has montado correctamente la primera parte del proyecto.</p>
-<h1>DANI CABRON</h1>
+	<p>Esto es un Blog sin animo de lucro mas que el de hacer una practica</p>
+	<br>
+	<h3>para seguir porfavor ve al apartdo Post o Articulos.</h3>
+
 
 
 

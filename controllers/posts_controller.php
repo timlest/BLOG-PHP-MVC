@@ -25,6 +25,8 @@ class PostsController {
 
 	}
 
+//funcion para insertar un Post
+
 	public function insertar(){
 		
         Post::insertarBD();
@@ -32,6 +34,7 @@ class PostsController {
 
 
 	}
+//funcion para buscar el Post a modificar
 
 	public function modificar($id){
 		$posts = Post::find($id);
@@ -39,7 +42,7 @@ class PostsController {
 
 
 	}
-
+//funcion para Hacer el update a un Post
 	public function update(){
 			Post::updateBD();
 			echo("<h1> S'ha actualitzat</h1>");
@@ -47,7 +50,7 @@ class PostsController {
 
 	}	
 
-
+//funcion para eliminar un Post
 	public function delete($id){
 		if(Post::eliminarBD($id)==true){
 

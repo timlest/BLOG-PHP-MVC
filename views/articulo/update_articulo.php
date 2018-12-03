@@ -1,4 +1,4 @@
-
+<!--Form de creacion de Articulo-->
 
 <form action="<?php echo constant('URL'); ?>articulo/update" method="post" enctype="multipart/form-data"> 
     <table class='table table-hover table-responsive table-bordered'>

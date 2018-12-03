@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 	<html>
 	<head>
 		<meta charset="utf-8">
@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- our custom CSS -->
+      <link rel="stylesheet" href="css/estilos2.css">
       <link rel="stylesheet" href="../css/estilos.css">
+      
 	</head>
 	<body>
 		<header>
@@ -19,6 +21,8 @@
 	
 			
 		</header>
+
+    <!--Barra de menu color negro para personalizar un poco el estilo.-->
 		<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -54,10 +58,16 @@
   </div>
 </nav>
 
-		<?php require_once('routes.php'); ?>
+		<?php 
+//llamamos a las rutas para que haga la redireccion adecuada
+    require_once('routes.php'); ?>
 
-		<footer>
+		<footer class="piedepagina">
 			<?php require_once('views/layout_footer.php'); ?>
+      <div>
+
+        PATATAS
+      </div>
 			
 		</footer>
 	</body>

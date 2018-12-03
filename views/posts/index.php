@@ -1,9 +1,9 @@
-
+<!--Clase index de POST aqui aparece la tabla con el listado de posts-->
 
 
 <p><strong>Listado de los posts:</strong></p>
 <?php
-
+//el form de buscar//
 echo "<form role='search' action='search.php'>";
 echo "<div class='input-group col-md-3 pull-left margin-right-1em'>";
 $search_value=isset($search_term) ? "value='{$search_term}'" : "";
@@ -17,7 +17,7 @@ echo "</form>";
 
 
 
-
+//nuestra tabla para cada post con una ordenacion en cada cabzera
 
 
 echo "<table id='taula' class='table table-hover table-responsive table-bordered'>";

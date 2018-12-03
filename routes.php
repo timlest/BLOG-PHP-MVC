@@ -33,6 +33,7 @@ if (array_key_exists($controller, $controllers)) {
 	if (in_array($action, $controllers[$controller])) {
 		call($controller, $action,$dato);
 	} else {
+		//si el controlador con ess acciones no existe se llama a la pagina de error
 		call('pages', 'error',null);
 	}
 } else {
